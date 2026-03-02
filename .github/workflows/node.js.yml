@@ -56,3 +56,4 @@ jobs:
         run: k6 run --out cloud k6/load-test.js
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+
