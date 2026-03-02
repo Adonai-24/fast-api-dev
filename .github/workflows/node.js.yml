@@ -57,6 +57,6 @@ jobs:
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
       - name: Debug K6 token
-        run: echo "K6 token length: ${#K6_CLOUD_TOKEN}"
+        run: echo "K6 token length: $(echo $K6_CLOUD_TOKEN | wc -c)"
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
