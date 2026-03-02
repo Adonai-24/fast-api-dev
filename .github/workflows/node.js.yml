@@ -34,7 +34,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Use Node.js 18.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
           node-version: 22.20.0
@@ -54,5 +54,9 @@ jobs:
           sudo apt-get install k6
       - name: Run k6 cloud test
         run: k6 cloud run k6/load-test.js
+        env:
+          K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
+      - name: Debug K6 token
+        run: echo "K6 token length: ${#K6_CLOUD_TOKEN}"
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
