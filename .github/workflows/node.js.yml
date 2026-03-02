@@ -53,6 +53,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install k6
       - name: Run k6 cloud test
-        run: k6 cloud tests/load.test.js
+        run: k6 cloud tests/load-test.js
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
