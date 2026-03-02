@@ -53,6 +53,6 @@ jobs:
           tar -xzf k6-v*-linux-amd64.tar.gz
           sudo mv k6-v*-linux-amd64/k6 /usr/local/bin/k6
       - name: Run k6 cloud test
-        run: k6 run --out cloud --project 6874603 k6/load-test.js
+        run: k6 run --out cloud k6/load-test.js
         env:
           K6_CLOUD_TOKEN: ${{ secrets.K6_CLOUD_TOKEN }}
